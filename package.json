@@ -1,0 +1,26 @@
+{
+  "name": "homeworkburger",
+  "version": "1.0.0",
+  "description": "choose a burger",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morrow7564/homeworkBurger.git"
+  },
+  "author": "Chris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morrow7564/homeworkBurger/issues"
+  },
+  "homepage": "https://github.com/morrow7564/homeworkBurger#readme"
+}
