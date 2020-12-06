@@ -1,38 +1,39 @@
-<h1>Burgers!</h1>
+<header>
+    <h1>Burger Log</h1>
+    <form id="burgerCreate">
+        <input type="text" name="burgerName">
+        <button type="submit">Add Burger</button>
+    </form>
+    <p>Enter a burger you want to eat and click the "Add Burger" button</p>
+</header>
 
-<h2>Burgers that are not devoured!</h2>
+<main>
+    
+    <section >
+        <h1 class="burgerCategory">Burgers to Devour</h1>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <div class="freshBurger">
+                        <li>{{burger_name}}</li>
+                        <button class="burgerUpdate" type="submit" burger-id="{{id}}">Devour!</button>
+                    </div>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </section>
+    
+  
+    <section >
+        <h1 >Burgers Devoured</h1>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li><i ></i>{{burger_name}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </section>
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      {{Burger.name}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      {{Burger.name}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger </h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="dov">Dovoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="not devoured" value="0"> not Devoured
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+    <script type="text/javascript" src="/assets/burg.js"></script>
+</main>

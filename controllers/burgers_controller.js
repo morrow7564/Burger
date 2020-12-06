@@ -1,60 +1,28 @@
-var express = require("express");
+const express = require("express");
+const router = express.Router();
 
-var router = express.Router();
+const Burgers = require("../models/burger");
 
-// Import the model (cat.js) to use its database functions.
-var burger = require("../models/burger.js");
-
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burger.all(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+// Get route, gets all data (burgers) and passes that data to the index.handlebars file
+router.get("/", (req, res) => {
+    Burgers.selectAll(data => {
+        res.render("index", {burgers: data});
+    });
 });
 
-router.post("/api/Burgers", function(req, res) {
-  burger.create([
-    "name", "devoured"
-  ], [
-    req.body.name, req.body.devoured
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
+// POST route, takes the data (burger name) from the front end and passed in to our Burger model
+router.post("/api/burgers", (req, res) => {
+    Burgers.create(req.body.burgerName, (result) => {
+        res.json({id: result.insertId});
+    });
 });
 
-router.put("/api/Burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burger.update({
-    devoured: req.body.devoured
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
-router.delete("/api/Burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  burger.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
+// PUT route, takes the id of the data that was clicked on in the front end to be passed in to our Burger model
+router.put("/api/burgers/:id", (req, res) => {
+    Burgers.update(req.params.id, () => {
+        res.status(200).end();
+    });
 });
 
-// Export routes for server.js to use.
+
 module.exports = router;
