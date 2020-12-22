@@ -5,7 +5,7 @@ $("#burgerCreate").on("submit", (e) => {
   let newBurger = {
       burgerName: $("#burgerCreate [name=burgerName]").val().trim()
   };
-
+console.log(newBurger)
   $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
