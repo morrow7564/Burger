@@ -1,27 +1,18 @@
-# homeworkBurger
+# Burger Log
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description 
 
-
-The application requests the user to input some details in the search bar: the name of the restaurant they're looking for, the cuisine style of a restaurant they're looking for, and/or if a restaurant has carryout functionality.
-
-The application will also require the user to input their zipcode, to best approximate the user's location.
-
+An app that logs all of the burgers that a user wishes to eat in a list and the burgers that have been eaten in another.
+The user can add a new burger to the list of burgers to be devoured (eaten) by clicking the "Add Burger" button. When the user clicks the "Devour" button, the burger will be 'devoured' and moved from the list of burgers to be devoured to the list of burgers that have been devoured. This will log all of the burgers that have been devoured.
 ## User Story
 
-Enter all of the information requested into the search form.
-
-Information for the weather will pop up for the area in question.
-
-Markers will pop up on the map in regards to the restaurants being searched, to a maximum of 15 results.
-
-To reset the app, click the reset button and re-enter the data.
+Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
 
 ### App screenshot
 
-![AppPhoto](./Assets/image.png)   
+![AppPhoto](public/assets/image.png)   
 
 ## Table of contents
 
@@ -34,7 +25,7 @@ To reset the app, click the reset button and re-enter the data.
 
 ## Usage
 
-Go to [Restaurant Finder](https://morrow7564.github.io/Restaurant-Finder/) 
+Go to [Burger App](https://homework12burger.herokuapp.com/) 
 
 
 ## Technologies
@@ -51,11 +42,12 @@ Go to [Restaurant Finder](https://morrow7564.github.io/Restaurant-Finder/)
 
 ## Repository
 
-- [Project Repo](https://github.com/morrow7564/Restaurant-Finder)
+- [Project Repo](https://github.com/morrow7564/Burger)
 
 
 ## GitHub
 
 - Christopher Morrow
 - [GitHub Profile](https://github.com/morrow7564)
+
 
