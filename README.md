@@ -1,4 +1,4 @@
-# homeworkBurger# Restaurant Finder
+# homeworkBurger
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
